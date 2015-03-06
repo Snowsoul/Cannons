@@ -24,18 +24,12 @@ public class KeepTheTurns : MonoBehaviour {
 						
 						p1ui = GameObject.FindGameObjectsWithTag("P1-UI");
 						p2ui = GameObject.FindGameObjectsWithTag("P2-UI");
-						
-
 
 						currentPlayer = GameObject.FindWithTag ("Player1");
 						nextPlayer = GameObject.FindWithTag ("Player2");
 						//turntext = GameObject.Find("TurnText");
 						//text = turntext.GetComponent<Text>();
 						timetext = GameObject.Find("TimeLeft").GetComponent<Text>();
-				
-						
-						
-
 				}
 
 	}

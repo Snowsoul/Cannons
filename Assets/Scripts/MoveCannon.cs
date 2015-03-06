@@ -28,6 +28,10 @@ public class MoveCannon : MonoBehaviour {
 	private int defenseAmount = 2;
 	private int turnCount = 0;
 	public AudioClip fireSound;
+    private GameObject[] p1UI;
+    private GameObject[] p2UI;
+
+
 
 	void rotateCannon(){
 
@@ -82,11 +86,26 @@ public class MoveCannon : MonoBehaviour {
 
 
 		frozen = true;
-		if (playerTag == "Player1")
-						freezeP1.GetComponent<Renderer>().enabled = true;
-		else
-			if (playerTag =="Player2")
-						freezeP2.GetComponent<Renderer>().enabled = true;
+        if (playerTag == "Player1")
+        {
+            foreach (GameObject uiElement in p1UI)
+            {
+                if (uiElement.name != "Defend-P1")
+                    uiElement.GetComponent<ShootSystem>().setFalse();
+            }
+
+            freezeP1.GetComponent<Renderer>().enabled = true;
+        }
+        else
+            if (playerTag == "Player2")
+            {
+                foreach (GameObject uiElement in p2UI)
+                {
+                    if (uiElement.name != "Defend-P2")
+                        uiElement.GetComponent<ShootSystem>().setFalse();
+                }
+                freezeP2.GetComponent<Renderer>().enabled = true;
+            }
 		defrostNextTurn = true;
 			
 
@@ -95,11 +114,16 @@ public class MoveCannon : MonoBehaviour {
 	void UnFreeze(){
 		frozen = false;
 		defrostNextTurn = false;
-		if (playerTag == "Player1")
-			freezeP1.GetComponent<Renderer>().enabled = false;
-		else
-			if (playerTag == "Player2")
-				freezeP2.GetComponent<Renderer>().enabled = false;
+        if (playerTag == "Player1")
+        {
+            freezeP1.GetComponent<Renderer>().enabled = false;
+
+        }
+        else
+            if (playerTag == "Player2")
+            {
+                freezeP2.GetComponent<Renderer>().enabled = false;
+            }
 
 
 	}
@@ -140,6 +164,9 @@ public class MoveCannon : MonoBehaviour {
 		freezeP2 = GameObject.Find ("fc-p2");
 		burnP1 = GameObject.Find ("burn-p1");
 		burnP2 = GameObject.Find ("burn-p2");
+
+        p1UI = GameObject.FindGameObjectsWithTag("P1-UI");
+        p2UI = GameObject.FindGameObjectsWithTag("P2-UI");
 
 		 screenPos = cm.WorldToScreenPoint(initialPos.transform.position);
 			
