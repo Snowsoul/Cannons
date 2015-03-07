@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Text;
+using System.Xml;
+using System.IO;
 
 public class CreateMap : MonoBehaviour {
 
@@ -8,13 +11,24 @@ public class CreateMap : MonoBehaviour {
 
 
 	void Start () {
-			totalMaps = PlayerPrefs.GetInt("Maps");
+        string filePath = Application.dataPath + @"/maps/maps.xml";
+        XmlDocument xmlDoc = new XmlDocument();
+
+        if (File.Exists(filePath))
+        {
+            xmlDoc.Load(filePath);
+
+            XmlNodeList transformList = xmlDoc.GetElementsByTagName("map");
+            totalMaps = transformList.Count;
+
+        }
+
 	}
 
 	void saveMap(){
 
-		int mapNumber = totalMaps + 1;
-		int objectsNumber = 0;
+		int mapNumber = totalMaps;
+		//int objectsNumber = 0;
 
 		Debug.Log ("Map " + mapNumber + " was successfuly saved !");
 
@@ -22,27 +36,80 @@ public class CreateMap : MonoBehaviour {
 
 		GameObject[] shapes = GameObject.FindGameObjectsWithTag ("level-shapes");
 
-		foreach (GameObject shape in shapes) {
+       
 
-			int shapeType = -1;
+            string newPath = Application.dataPath + @"/maps/level-" + totalMaps + ".xml";
+            File.WriteAllText(newPath,"<map></map>");
+            XmlDocument newLevel = new XmlDocument();
 
-			switch(shape.name){
+            if (File.Exists(newPath))
+            {  
+                
+                newLevel.Load(newPath);
+                XmlElement elmRoot = newLevel.DocumentElement;
+               
+                XmlElement elmObjects = newLevel.CreateElement("mapObjects");
 
-				case "rotatingCross-shape" :
-				
-					shapeType = 0;
-				
-				break;
 
-				case "curved-shape" :
+                foreach (GameObject shape in shapes)
+                {
 
-					shapeType = 1;
+                    int shapeType = -1;
 
-				break;
+                    switch (shape.name)
+                    {
 
-			}
+                        case "rotatingCross-shape":
 
-			PlayerPrefs.SetInt("map["+totalMaps+"].object["+objectsNumber+"].type",shapeType);
+                            shapeType = 0;
+
+                            break;
+
+                        case "curved-shape":
+
+                            shapeType = 1;
+
+                            break;
+
+                    }
+
+
+
+
+                    
+                    XmlElement elmObject = newLevel.CreateElement("object");
+
+                    XmlElement type = newLevel.CreateElement("type");
+                    XmlElement position = newLevel.CreateElement("position");
+                    XmlElement scale = newLevel.CreateElement("scale");
+                    XmlElement rotation = newLevel.CreateElement("rotation");
+
+                    type.InnerText = shapeType.ToString();
+                    position.InnerText = shape.transform.position.x + "," + shape.transform.position.y + "," + shape.transform.position.z;
+                    scale.InnerText = shape.transform.localScale.x + "," + shape.transform.localScale.y + "," + shape.transform.localScale.z;
+                    rotation.InnerText = shape.transform.rotation.eulerAngles.x + "," + shape.transform.rotation.eulerAngles.y + "," + shape.transform.rotation.eulerAngles.z;
+
+
+                    elmObject.AppendChild(type);                    
+                    elmObject.AppendChild(position);
+                    elmObject.AppendChild(scale);
+                    elmObject.AppendChild(rotation);
+                    elmObjects.AppendChild(elmObject);
+
+
+
+
+
+                }
+                elmRoot.AppendChild(elmObjects);
+
+                newLevel.Save(newPath);
+                 
+
+               
+            
+
+			/*PlayerPrefs.SetInt("map["+totalMaps+"].object["+objectsNumber+"].type",shapeType);
 
 			PlayerPrefs.SetFloat("map["+totalMaps+"].object["+objectsNumber+"].position.x",shape.transform.position.x);
 			PlayerPrefs.SetFloat("map["+totalMaps+"].object["+objectsNumber+"].position.y",shape.transform.position.y);
@@ -58,13 +125,40 @@ public class CreateMap : MonoBehaviour {
 
 
 			objectsNumber ++;
+             */
+                string mapPath = Application.dataPath + @"/maps/maps.xml";
+                XmlDocument newMap = new XmlDocument();
+
+
+                newMap.Load(mapPath);
+
+                XmlElement elementRoot = newMap.DocumentElement;
+
+                XmlElement map = newMap.CreateElement("map");                
+                XmlElement mapId = newMap.CreateElement("id");
+                XmlElement mapObjects = newMap.CreateElement("totalObjects");
+
+                mapId.InnerText = totalMaps.ToString();
+                mapObjects.InnerText = "0";
+
+                map.AppendChild(mapId);
+                map.AppendChild(mapObjects);
+
+                elementRoot.AppendChild(map);
+
+
+                newMap.Save(mapPath);
+
+
+
 
 		}
 
 
-		PlayerPrefs.SetInt("map["+totalMaps+"].objects",objectsNumber);
+		/*PlayerPrefs.SetInt("map["+totalMaps+"].objects",objectsNumber);
 		PlayerPrefs.SetInt ("Maps", mapNumber);
-		PlayerPrefs.Save ();
+		PlayerPrefs.Save ();*/
+
 	}
 	
 
@@ -77,8 +171,39 @@ public class CreateMap : MonoBehaviour {
 
 		if (Input.GetKeyDown ("f6")) {
 
-			Debug.Log("All maps have been deleted");
+			/*Debug.Log("All maps have been deleted");
 			PlayerPrefs.DeleteAll();
+            */
+            string mapPath = Application.dataPath + @"/maps/maps.xml";
+            XmlDocument newMap = new XmlDocument();
+
+
+            newMap.Load(mapPath);
+
+            XmlElement elementRoot = newMap.DocumentElement;
+            XmlNodeList mapElements = newMap.GetElementsByTagName("map");
+            foreach (XmlNode mapElement in mapElements)
+            {
+                XmlNodeList maps = mapElement.ChildNodes;
+                foreach (XmlNode el in maps)
+                {
+                    if (el.Name == "id")
+                    {
+                        if (el.InnerText == "3")
+                        {
+                            elementRoot.RemoveChild(mapElement);
+                            File.Delete(Application.dataPath + @"/maps/level-3.xml");
+                            Debug.Log("Map 3 deleted");
+                        }
+                        else
+                        {
+                            Debug.Log("Map 3 not found!");
+                        }
+                    }
+                }
+            }
+
+            newMap.Save(mapPath);
 		}
 	
 	}
