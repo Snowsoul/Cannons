@@ -182,6 +182,7 @@ public class CreateMap : MonoBehaviour {
 
             XmlElement elementRoot = newMap.DocumentElement;
             XmlNodeList mapElements = newMap.GetElementsByTagName("map");
+            
             foreach (XmlNode mapElement in mapElements)
             {
                 XmlNodeList maps = mapElement.ChildNodes;
