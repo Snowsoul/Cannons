@@ -12,6 +12,7 @@ TagManager:
   - P1-UI
   - P2-UI
   - level-shapes
+  - projectile
   layers:
   - Default
   - TransparentFX
