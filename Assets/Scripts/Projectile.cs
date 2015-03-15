@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour {
 	public bool fire = false;
 	public bool simple = true;
 	private string player="";
-	private bool stopForce = false;
+	public bool stopForce = false;
 
 	// Use this for initialization
 
@@ -88,8 +88,31 @@ public class Projectile : MonoBehaviour {
 
 	}
 	void OnCollisionEnter2D(Collision2D col){
-		if (!stopForce)
-		stopForce = true;
+        if (!stopForce)
+        {
+            /*switch (player)
+            {
+                case "Player1":
+
+                    transform.GetComponent<Rigidbody2D>().gravityScale = 1;
+                    //transform.rigidbody2D.AddForce (Vector3.up *maxSpeed);
+
+                    break;
+
+                case "Player2":
+                    transform.GetComponent<Rigidbody2D>().gravityScale = -1;
+                    //transform.rigidbody2D.AddForce (Vector3.down *maxSpeed);
+                    break;
+            }*/
+            stopForce = true;
+        }
+		
+
+        if (col.gameObject.tag == "mapWall")
+        {
+            Destroy(transform.gameObject);
+        }
 	}
+
 	
 }

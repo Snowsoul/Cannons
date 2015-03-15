@@ -5,6 +5,7 @@ public class speedUp : MonoBehaviour {
 
     float oldGravity = 0f;
     float oldSpeed = 0f;
+    public uint power = 0;
 	// Use this for initialization
 	void Start () {
 	
@@ -26,8 +27,11 @@ public class speedUp : MonoBehaviour {
             oldSpeed = projScript.maxSpeed;
 
             projScript.maxSpeed = 0f;
-
-            g.GetComponent<Rigidbody2D>().gravityScale = 0f;
+            g.GetComponent<Rigidbody2D>().gravityScale  /= power;
+     
+      
+           
+            //projScript.stopForce = true;
 
              
         }
@@ -41,6 +45,7 @@ public class speedUp : MonoBehaviour {
 
             //projScript.maxSpeed = oldSpeed;
             g.GetComponent<Rigidbody2D>().gravityScale = oldGravity;
+            projScript.stopForce = false;
 
 
         }
