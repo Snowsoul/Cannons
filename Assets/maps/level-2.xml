@@ -1,0 +1,16 @@
+<map>
+  <mapObjects>
+    <object>
+      <type>0</type>
+      <position>-4.04,-0.2,0</position>
+      <scale>0.6401379,0.6401374,0.6401374</scale>
+      <rotation>0,0,319.4174</rotation>
+    </object>
+    <object>
+      <type>1</type>
+      <position>1.29,-0.07,8E-15</position>
+      <scale>0.6670576,0.667058,0.6670586</scale>
+      <rotation>-1.832E-12,-5.008957E-06,81.50648</rotation>
+    </object>
+  </mapObjects>
+</map>
