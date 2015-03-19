@@ -2126,7 +2126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 176714, guid: df701dc355c8c1b498b9c55423ec69ce, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df701dc355c8c1b498b9c55423ec69ce, type: 2}
@@ -2945,7 +2945,7 @@ GameObject:
   - 68: {fileID: 804286160}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: mapWall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
