@@ -16,6 +16,7 @@ public class KeepTheTurns : MonoBehaviour {
 	private int resultTime;
 	private GameObject[] p1ui;
 	private GameObject[] p2ui;
+    public int turnsCount = 1;
 
 
 
@@ -35,11 +36,17 @@ public class KeepTheTurns : MonoBehaviour {
 	}
 
 	void endTurn(){
+        if (turnsCount == 3)
+        {
+            GameObject.Find("Main Camera").GetComponent<mapLoaderFromPlayerPrefs>().setMap();
+            turnsCount = 0;
+        }
 		currentTime = 0f;
 		if (playerTurn == 1) {
 						playerTurn = 2;
 			GameObject.Find("TimeLeft").GetComponent<RectTransform>().Rotate(0f,180f,0f);
 						//Physics2D.gravity *= -1;
+            turnsCount++;
 			nextPlayer.SendMessage ("changeTurn");
 
 			foreach(GameObject g2 in p2ui)
@@ -61,7 +68,7 @@ public class KeepTheTurns : MonoBehaviour {
 				g1.GetComponent<ShootSystem>().setActive();
 
 
-
+            turnsCount++;
 			currentPlayer.SendMessage ("changeTurn");
 						//text.text = "Player1 Turn";
 				}

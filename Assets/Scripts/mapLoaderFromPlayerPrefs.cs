@@ -31,7 +31,14 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
 	private int lastMap = -1;
 
 
-	void setMap(List<Map> maps,int rand){
+	public void setMap(){
+
+        do
+        {
+            randomMapNumber = Random.Range(0, totalMaps);
+        }
+        while (randomMapNumber == lastMap && totalMaps > 1);
+        lastMap = randomMapNumber;
 
 		GameObject[] shapez = GameObject.FindGameObjectsWithTag ("level-shapes");
 		
@@ -41,9 +48,9 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
 
 		GameObject shapePick = shapes[0];
 
-		for (int i=0; i<maps[rand].mapObj.Count; i++) {
+		for (int i=0; i<allMaps[randomMapNumber].mapObj.Count; i++) {
 
-			switch(maps[rand].mapObj[i].type){
+			switch(allMaps[randomMapNumber].mapObj[i].type){
 				
 			case 0:
 				shapePick = shapes[0];
@@ -57,8 +64,8 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
 				
 			}
 			
-			GameObject shape = Instantiate(shapePick,maps[rand].mapObj[i].pos,Quaternion.Euler(maps[rand].mapObj[i].rot)) as GameObject;
-			shape.transform.localScale = maps[rand].mapObj[i].scale;
+			GameObject shape = Instantiate(shapePick,allMaps[randomMapNumber].mapObj[i].pos,Quaternion.Euler(allMaps[randomMapNumber].mapObj[i].rot)) as GameObject;
+			shape.transform.localScale = allMaps[randomMapNumber].mapObj[i].scale;
 			
 		}
 
@@ -186,7 +193,7 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
 
 		}
         */
-
+        setMap();
 	}
 	
 
@@ -194,13 +201,13 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
 
 		if (Input.GetKeyDown ("l"))
 		{
-			do{
+			/*do{
 				randomMapNumber = Random.Range(0,totalMaps);
 			}
 			while (randomMapNumber == lastMap && totalMaps > 1);
-
-			setMap (allMaps,randomMapNumber);
-			lastMap = randomMapNumber;
+            */
+			setMap ();
+			//lastMap = randomMapNumber;
 		}
 		
 	}

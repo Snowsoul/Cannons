@@ -32,12 +32,12 @@ public class mapLoader : MonoBehaviour {
 
 	// Use this for initialization
 
-	void setMap(List<AllMap> maps,int rand){
+	void setMap(){
 
 	
 
-		for (int i=0; i<maps[rand].mapObj.Count; i++) {
-				switch(maps[rand].mapObj[i].type){
+		for (int i=0; i<mapLevels[randomMap].mapObj.Count; i++) {
+				switch(mapLevels[randomMap].mapObj[i].type){
 
 					case 0:
 						shapePick = shapes[0];
@@ -51,8 +51,8 @@ public class mapLoader : MonoBehaviour {
 
 			}
 
-			shape = Instantiate(shapePick,maps[rand].mapObj[i].pos,Quaternion.Euler(maps[rand].mapObj[i].rot)) as GameObject;
-			shape.transform.localScale = maps[rand].mapObj[i].scale;
+			shape = Instantiate(shapePick,mapLevels[randomMap].mapObj[i].pos,Quaternion.Euler(mapLevels[randomMap].mapObj[i].rot)) as GameObject;
+			shape.transform.localScale = mapLevels[randomMap].mapObj[i].scale;
 
 		}
 
@@ -125,7 +125,7 @@ public class mapLoader : MonoBehaviour {
 		
 		}
 
-		setMap (mapLevels,randomMap);
+		setMap ();
 
 
 
