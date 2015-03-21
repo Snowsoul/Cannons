@@ -29,6 +29,7 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
 	private int randomMapNumber;
 	private int totalMaps;
 	private int lastMap = -1;
+    public bool setMaps = true;
 
 
 	public void setMap(){
@@ -193,6 +194,7 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
 
 		}
         */
+        if (setMaps)
         setMap();
 	}
 	
