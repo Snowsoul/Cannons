@@ -6145,7 +6145,7 @@ GameObject:
   - 95: {fileID: 1461210988}
   m_Layer: 0
   m_Name: wrecking ball
-  m_TagString: Untagged
+  m_TagString: level-shapes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7520,7 +7520,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 10
 --- !u!224 &1887987003
 RectTransform:
   m_ObjectHideFlags: 0
