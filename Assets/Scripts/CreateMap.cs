@@ -55,8 +55,9 @@ public class CreateMap : MonoBehaviour {
                 {
 
                     int shapeType = -1;
+                    string[] shapeName = shape.name.Split(' ');
 
-                    switch (shape.name)
+                    switch (shapeName[0])
                     {
 
                         case "rotatingCross-shape":
@@ -69,6 +70,16 @@ public class CreateMap : MonoBehaviour {
 
                             shapeType = 1;
 
+                            break;
+
+                        case "wrecking-ball":
+
+                            shapeType = 2;
+
+
+                            break;
+                        case "powerUp":
+                            shapeType = 3;
                             break;
 
                     }

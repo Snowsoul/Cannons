@@ -41,6 +41,8 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
         while (randomMapNumber == lastMap && totalMaps > 1);
         lastMap = randomMapNumber;
 
+        Debug.Log("Current Level is: " + randomMapNumber);
+
 		GameObject[] shapez = GameObject.FindGameObjectsWithTag ("level-shapes");
 		
 		foreach (GameObject shape in shapez) {
@@ -62,6 +64,13 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
 				shapePick = shapes[1];
 				break;
 				
+            case 2:
+                shapePick = shapes[2];
+            break;
+
+            case 3:
+                shapePick = shapes[3];
+            break;
 				
 			}
 			

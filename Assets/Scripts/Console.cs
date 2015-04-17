@@ -19,16 +19,21 @@ public class Console : MonoBehaviour {
 		if (!consoleShown)
 		{
 			consoleShown = true;
-			GameObject.Find ("InputField").GetComponent<RectTransform>().localPosition = new Vector3(0.01250017f,128.5f,0f);
-			GameObject.Find ("TextArea").GetComponent<RectTransform>().localPosition = new Vector3(0f,312f,0f);
+            GameObject.Find("ConsoleCanvas").GetComponent<Canvas>().enabled = true;
+            GameObject.Find("InputField").GetComponent<InputField>().Select();
+            GameObject.Find("InputField").GetComponent<InputField>().ActivateInputField();
+
+			
 
 
 		} 
 		else
 		{
 			consoleShown = false;
-			GameObject.Find ("InputField").GetComponent<RectTransform>().localPosition = new Vector3(0.01250017f,268.5f,0f);
-			GameObject.Find ("TextArea").GetComponent<RectTransform>().localPosition = new Vector3(0f,250f,0f);
+            GameObject.Find("ConsoleCanvas").GetComponent<Canvas>().enabled = false;
+            GameObject.Find("InputField").GetComponent<InputField>().text = "";
+            GameObject.Find("InputField").GetComponent<InputField>().DeactivateInputField();
+	
 		}
 
 
@@ -37,6 +42,13 @@ public class Console : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+   
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            GameObject.Find("InputField").GetComponent<InputField>().Select();
+            GameObject.Find("InputField").GetComponent<InputField>().ActivateInputField();
+
+        }
 		if (Input.GetKeyDown(KeyCode.BackQuote)){
 			consoleToggle();
 		}
@@ -46,8 +58,13 @@ public class Console : MonoBehaviour {
 
 		
 			inputText = GameObject.Find ("inputText").GetComponent<Text>().text;
+           
+            GameObject testText = GameObject.Find("InputField");
+            InputField newText = testText.GetComponent<InputField>();
+            newText.text = "";
 			GameObject.Find("ConsoleText").GetComponent<Text>().text += "\n"+inputText;
-			GameObject.Find ("inputText").GetComponent<Text>().text = null;
+            GameObject.Find("InputField").GetComponent<InputField>().Select();
+            GameObject.Find("InputField").GetComponent<InputField>().ActivateInputField();
 
 		}
 	

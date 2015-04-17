@@ -4,7 +4,7 @@ using System.Collections;
 public class speedUp : MonoBehaviour {
 
     float oldGravity = 0f;
-    float oldSpeed = 0f;
+
     public uint power = 0;
 	// Use this for initialization
 	void Start () {
@@ -24,7 +24,7 @@ public class speedUp : MonoBehaviour {
             Projectile projScript = g.GetComponent<Projectile>();
 
             oldGravity = g.GetComponent<Rigidbody2D>().gravityScale;
-            oldSpeed = projScript.maxSpeed;
+           
 
             projScript.maxSpeed = 0f;
             g.GetComponent<Rigidbody2D>().gravityScale  /= power;
