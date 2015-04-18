@@ -490,7 +490,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.57500005, y: -808.999817}
+  m_AnchoredPosition: {x: 3.57500005, y: -1112.59985}
   m_SizeDelta: {x: -7.1500001, y: 60.5999985}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &108157633
@@ -2994,7 +2994,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 468718, guid: 93c968ce8edfd8049979583992f8abb4, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 192462, guid: 93c968ce8edfd8049979583992f8abb4, type: 2}
       propertyPath: m_IsActive
@@ -3435,7 +3435,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 483136, guid: b5bc313c580382847bb25db9d283d770, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21283140, guid: b5bc313c580382847bb25db9d283d770, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -3457,6 +3457,10 @@ Prefab:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11483140, guid: b5bc313c580382847bb25db9d283d770, type: 2}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 65ea62e84bd70fd44a1f280f37f58915, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5bc313c580382847bb25db9d283d770, type: 2}
   m_IsPrefabParent: 0
@@ -5189,7 +5193,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 483136, guid: b5bc313c580382847bb25db9d283d770, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 183136, guid: b5bc313c580382847bb25db9d283d770, type: 2}
       propertyPath: m_TagString
@@ -7583,7 +7587,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cfd248d9ffdd1524f8a06e95aad6d747, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cfd248d9ffdd1524f8a06e95aad6d747, type: 2}
       propertyPath: m_IsActive
