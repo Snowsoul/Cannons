@@ -347,8 +347,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 100000, guid: cfd248d9ffdd1524f8a06e95aad6d747, type: 2}
   projectileSpawner: {fileID: 183142}
-  freezeSound: {fileID: 8300000, guid: 7ac820fe1cc3fd1438c166a94c73b261, type: 3}
-  fireSound: {fileID: 8300000, guid: f7114ebc1c53eb041b4e6a86db8de064, type: 3}
+  freezeSound: {fileID: 8300000, guid: 777585f8731ee774d9dad25ddbc16291, type: 3}
+  fireSound: {fileID: 8300000, guid: def523d36ec70b34e8f6fef8e2a21fe9, type: 3}
   simpleSound: {fileID: 8300000, guid: 4372635728b8d204486077bb54df1d67, type: 3}
 --- !u!212 &21283140
 SpriteRenderer:
