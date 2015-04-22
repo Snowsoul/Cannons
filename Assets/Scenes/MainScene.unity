@@ -459,73 +459,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9c16b59a41123d54287e67f549a0f239, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &108157631
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 108157632}
-  - 222: {fileID: 108157634}
-  - 114: {fileID: 108157633}
-  m_Layer: 5
-  m_Name: ConsoleText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &108157632
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 108157631}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1805304025}
-  m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.57500005, y: -3136.60376}
-  m_SizeDelta: {x: -7.1500001, y: 60.5999985}
-  m_Pivot: {x: .5, y: .5}
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 108157631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: .344305575, g: .735294104, b: .156790674, a: 1}
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Welcome to Cannons - Kindom Domination Console ...
-
-    Write down some commands to execute....'
---- !u!222 &108157634
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 108157631}
 --- !u!1 &123903116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,7 +1396,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9c16b59a41123d54287e67f549a0f239, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &299911939
+--- !u!1 &299911939 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 183142, guid: b5bc313c580382847bb25db9d283d770, type: 2}
   m_PrefabInternal: {fileID: 870239172}
@@ -2369,7 +2302,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1341774974}
   m_RootOrder: 3
---- !u!4 &592779410
+--- !u!4 &592779410 stripped
 Transform:
   m_PrefabParentObject: {fileID: 470484, guid: 9dadb09d0d5feee4ea276b4be51aa2c8, type: 2}
   m_PrefabInternal: {fileID: 906048712}
@@ -3269,7 +3202,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 813840037}
---- !u!1 &815393483
+--- !u!1 &815393483 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 183142, guid: b5bc313c580382847bb25db9d283d770, type: 2}
   m_PrefabInternal: {fileID: 1337365785}
@@ -3918,7 +3851,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9dadb09d0d5feee4ea276b4be51aa2c8, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &909116044
+--- !u!1 &909116044 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 183138, guid: b5bc313c580382847bb25db9d283d770, type: 2}
   m_PrefabInternal: {fileID: 870239172}
@@ -4762,7 +4695,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 10
---- !u!1 &1166124325
+--- !u!1 &1166124325 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 183136, guid: b5bc313c580382847bb25db9d283d770, type: 2}
   m_PrefabInternal: {fileID: 870239172}
@@ -5109,7 +5042,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -.5}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: .5, y: .5}
---- !u!1 &1274847472
+--- !u!1 &1274847472 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 183138, guid: b5bc313c580382847bb25db9d283d770, type: 2}
   m_PrefabInternal: {fileID: 1337365785}
@@ -6363,7 +6296,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1145146526}
   m_RootOrder: 0
---- !u!1 &1491254542
+--- !u!1 &1491254542 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 197794, guid: dee36d0a79e30294990e2482f8e7160c, type: 2}
   m_PrefabInternal: {fileID: 905863760}
@@ -6379,7 +6312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalMaps: 0
---- !u!20 &1491254546
+--- !u!20 &1491254546 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2097794, guid: dee36d0a79e30294990e2482f8e7160c,
     type: 2}
@@ -6505,7 +6438,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1514098145}
---- !u!1 &1553332617
+--- !u!1 &1553332617 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 183136, guid: b5bc313c580382847bb25db9d283d770, type: 2}
   m_PrefabInternal: {fileID: 1337365785}
@@ -7240,7 +7173,7 @@ MonoBehaviour:
   m_Script: {fileID: 1367256648, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Content: {fileID: 108157632}
+  m_Content: {fileID: 0}
   m_Horizontal: 1
   m_Vertical: 1
   m_MovementType: 0
@@ -7291,8 +7224,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 95}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 108157632}
+  m_Children: []
   m_Father: {fileID: 533990158}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
@@ -7499,7 +7431,7 @@ RectTransform:
   - {fileID: 473423823}
   - {fileID: 123903117}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -8104,7 +8036,7 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!4 &2142376754
+--- !u!4 &2142376754 stripped
 Transform:
   m_PrefabParentObject: {fileID: 470484, guid: 9dadb09d0d5feee4ea276b4be51aa2c8, type: 2}
   m_PrefabInternal: {fileID: 614390165}
