@@ -7,6 +7,8 @@ public class ShootSystem : MonoBehaviour {
 	public GameObject Spawner;
 	public GameObject Cannon;
 	public static bool bState = false;
+	public AudioClip defenseSound;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -31,6 +33,9 @@ public class ShootSystem : MonoBehaviour {
 
 	void setDefense(){
 		Cannon.SendMessage("Defend");
+		GameObject.Find ("DefenseSound").GetComponent<AudioSource> ().clip = defenseSound;
+		GameObject.Find ("DefenseSound").GetComponent<AudioSource> ().Play ();
+
 	}
 
 	void setFreeze(){
