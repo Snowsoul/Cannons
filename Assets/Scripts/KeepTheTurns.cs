@@ -17,6 +17,7 @@ public class KeepTheTurns : MonoBehaviour {
 	private GameObject[] p1ui;
 	private GameObject[] p2ui;
     public int turnsCount = 1;
+    private bool statusSet = false;
 
 
 
@@ -78,6 +79,19 @@ public class KeepTheTurns : MonoBehaviour {
 	}
 
 	void Update () {
+
+        if (!status && !statusSet)
+        {
+            p1ui = GameObject.FindGameObjectsWithTag("P1-UI");
+            p2ui = GameObject.FindGameObjectsWithTag("P2-UI");
+
+            currentPlayer = GameObject.FindWithTag("Player1");
+            nextPlayer = GameObject.FindWithTag("Player2");
+            //turntext = GameObject.Find("TurnText");
+            //text = turntext.GetComponent<Text>();
+            timetext = GameObject.Find("TimeLeft").GetComponent<Text>();
+            statusSet = true;
+        }
 				if (!status) {
 			resultTime = (int)timer - (int)currentTime;
 			timetext.text = resultTime.ToString()+"s";
