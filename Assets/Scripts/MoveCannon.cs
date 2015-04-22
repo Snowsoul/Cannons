@@ -30,7 +30,7 @@ public class MoveCannon : MonoBehaviour {
 	public AudioClip fireSound;
     private GameObject[] p1UI;
     private GameObject[] p2UI;
-
+	public AudioClip fireBurn;
 
 
 	void rotateCannon(){
@@ -147,6 +147,7 @@ public class MoveCannon : MonoBehaviour {
 			if (playerTag =="Player2")
 				burnP2.GetComponent<Renderer>().enabled = true;
 		stopBurningNextTurn = true;
+
 
 	}
 	void Defend(){
