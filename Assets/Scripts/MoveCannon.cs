@@ -31,7 +31,7 @@ public class MoveCannon : MonoBehaviour {
     private GameObject[] p1UI;
     private GameObject[] p2UI;
 	public AudioClip fireBurn;
-
+	public AudioClip iceCrack;
 
 	void rotateCannon(){
 
@@ -105,6 +105,11 @@ public class MoveCannon : MonoBehaviour {
                         uiElement.GetComponent<ShootSystem>().setFalse();
                 }
                 freezeP2.GetComponent<Renderer>().enabled = true;
+
+			transform.GetComponent<AudioSource>().clip = iceCrack;
+			transform.GetComponent<AudioSource>().Play ();
+			transform.GetComponent<AudioSource>().loop = false;
+
             }
 		defrostNextTurn = true;
 			
@@ -136,6 +141,8 @@ public class MoveCannon : MonoBehaviour {
 		else
 			if (playerTag == "Player2")
 				burnP2.GetComponent<Renderer>().enabled = false;
+
+		transform.GetComponent<AudioSource> ().Stop ();
 	}
 
 	void Burn(){
@@ -148,6 +155,9 @@ public class MoveCannon : MonoBehaviour {
 				burnP2.GetComponent<Renderer>().enabled = true;
 		stopBurningNextTurn = true;
 
+		transform.GetComponent<AudioSource>().loop = true;
+		transform.GetComponent<AudioSource> ().clip = fireBurn;
+		transform.GetComponent<AudioSource> ().Play ();
 
 	}
 	void Defend(){
