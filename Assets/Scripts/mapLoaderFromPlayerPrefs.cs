@@ -71,6 +71,7 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
             case 3:
                 shapePick = shapes[3];
             break;
+                 
 				
 			}
 			

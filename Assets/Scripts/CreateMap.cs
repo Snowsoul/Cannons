@@ -27,6 +27,7 @@ public class CreateMap : MonoBehaviour {
 
 	void saveMap(){
 
+        Debug.Log("test");
 		int mapNumber = totalMaps;
 		//int objectsNumber = 0;
 
