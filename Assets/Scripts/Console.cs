@@ -20,7 +20,7 @@ public class Console : MonoBehaviour {
 		{
 			consoleShown = true;
             GameObject.Find("ConsoleCanvas").GetComponent<Canvas>().enabled = true;
-            GameObject.Find("InputField").GetComponent<InputField>().Select();
+            //GameObject.Find("InputField").GetComponent<InputField>().Select();
             GameObject.Find("InputField").GetComponent<InputField>().ActivateInputField();
 
 			

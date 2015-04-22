@@ -1,16 +1,16 @@
 <map>
   <mapObjects>
     <object>
-      <type>3</type>
-      <position>2.05,-0.64,0</position>
-      <scale>0.2482935,0.2482935,0.2482935</scale>
-      <rotation>0,0,0.2151373</rotation>
+      <type>2</type>
+      <position>2.41,-1.11,-4.74</position>
+      <scale>1,1,1</scale>
+      <rotation>0,0,0</rotation>
     </object>
     <object>
-      <type>3</type>
-      <position>-2.5,-0.64,0</position>
-      <scale>0.2482935,0.2482935,0.2482935</scale>
-      <rotation>0,0,0.2151373</rotation>
+      <type>2</type>
+      <position>-2.67,-1.11,-4.74</position>
+      <scale>1,1,1</scale>
+      <rotation>0,0,0</rotation>
     </object>
   </mapObjects>
 </map>
