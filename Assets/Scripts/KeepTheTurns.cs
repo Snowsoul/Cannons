@@ -9,7 +9,7 @@ public class KeepTheTurns : MonoBehaviour {
 	public int playerTurn = 1;
 	private float currentTime = 0f;
 	public bool status = false;
-	public float timer = 3.0f;
+	public float timer = 30f;
 	private GameObject turntext;
 	private Text text;
 	private Text timetext;
@@ -22,6 +22,12 @@ public class KeepTheTurns : MonoBehaviour {
 
 
 	void Start () {
+
+        int hardcoreMode = PlayerPrefs.GetInt("hardcore");
+        if (hardcoreMode == 1)
+        {
+            timer = 3.0f;
+        }
 		if (!status) {
 						
 						p1ui = GameObject.FindGameObjectsWithTag("P1-UI");

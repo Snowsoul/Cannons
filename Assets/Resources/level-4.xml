@@ -1,0 +1,22 @@
+<map>
+  <mapObjects>
+    <object>
+      <type>1</type>
+      <position>2.03,0.09,0</position>
+      <scale>0.2399614,0.2399614,0.2399617</scale>
+      <rotation>0,0,133.3081</rotation>
+    </object>
+    <object>
+      <type>1</type>
+      <position>-2.42,0.09,0</position>
+      <scale>0.2399614,0.2399614,0.2399617</scale>
+      <rotation>4.07111E-13,180,133.3081</rotation>
+    </object>
+    <object>
+      <type>0</type>
+      <position>-0.1,0.1,0</position>
+      <scale>0.4025155,0.4025152,0.4025152</scale>
+      <rotation>0,0,319.4174</rotation>
+    </object>
+  </mapObjects>
+</map>

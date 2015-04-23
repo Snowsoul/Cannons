@@ -42,6 +42,7 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
         lastMap = randomMapNumber;
 
         Debug.Log("Current Level is: " + randomMapNumber);
+   
 
 		GameObject[] shapez = GameObject.FindGameObjectsWithTag ("level-shapes");
 		
@@ -91,12 +92,21 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
 
         List<int> mapsIds = new List<int>();
 
-        string filePath = Application.dataPath + @"/maps/maps.xml";
+        TextAsset temp = (TextAsset) Resources.Load("maps") as TextAsset;
         XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.LoadXml(temp.text);
+        
 
-        if (File.Exists(filePath))
+        /*string filePath = Application.dataPath + @"/Resources/maps.xml";
+        XmlDocument xmlDoc = new XmlDocument();
+         */
+       
+
+        if (temp.text !="")
         {
-            xmlDoc.Load(filePath);
+           
+            //xmlDoc.Load(filePath);
+           
 
             XmlNodeList transformList = xmlDoc.GetElementsByTagName("map");
 
@@ -115,20 +125,29 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
             }
         }
         else
-            Debug.Log("Map Path does not exist " + filePath);
+            Debug.Log("Map Path does not exist ");
 
         totalMaps = mapsIds.Count;
 
         foreach(int mId in mapsIds)
         {
-
-            string fPath = Application.dataPath + @"/maps/level-" + mId + ".xml";
+            TextAsset ftemp = (TextAsset) Resources.Load("level-" + mId) as TextAsset;
             XmlDocument levelMap = new XmlDocument();
+            levelMap.LoadXml(ftemp.text);
+
+
+
+            /*string fPath = Application.dataPath + @"/Resources/level-" + mId + ".xml";
+            XmlDocument levelMap = new XmlDocument();
+             */
+
             Map currentMap = new Map();
             List<mapObj> mapObjects = new List<mapObj>();
-            if (File.Exists(fPath))
+            if (ftemp.text !="")
             {
-                levelMap.Load(fPath);
+        
+                //levelMap.Load(fPath);
+                
                 
 
                 XmlNodeList objectsList = levelMap.GetElementsByTagName("object");
@@ -168,7 +187,7 @@ public class mapLoaderFromPlayerPrefs : MonoBehaviour {
             }
             else
             {
-                Debug.Log("Level Path does not exists " + fPath);
+                Debug.Log("Level Path does not exists ");
             }
 
             currentMap.mapObj = mapObjects;

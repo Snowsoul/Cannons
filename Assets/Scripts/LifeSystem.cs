@@ -30,13 +30,28 @@ public class LifeSystem : MonoBehaviour {
                 //player2HP.GetComponent<Image>().fillAmount = (float)health / 100;
                 decreaseP2 = true;
             }
-               
 
-		if (health == 0 && player == "Player1")
-						Debug.Log ("Player 2 Wins!!");
-		else
-			if (health == 0 && player == "Player2")
-						Debug.Log ("Player1 Wins !!");
+
+        if (health == 0 && player == "Player1")
+        {
+            Debug.Log("Player 2 Wins!!");
+            Time.timeScale = 0;
+            GameObject.Find("CountBG").GetComponent<SpriteRenderer>().enabled = true;
+            GameObject.Find("victory-icon").GetComponent<SpriteRenderer>().enabled = true; 
+            GameObject.Find("player2-wins").GetComponent<SpriteRenderer>().enabled = true;
+            GameObject.Find("RestartLevel").GetComponent<Image>().enabled = true;
+           
+        }
+        else
+            if (health == 0 && player == "Player2")
+            {
+                Debug.Log("Player1 Wins !!");
+                Time.timeScale = 0;
+                GameObject.Find("CountBG").GetComponent<SpriteRenderer>().enabled = true;
+                GameObject.Find("victory-icon").GetComponent<SpriteRenderer>().enabled = true;
+                GameObject.Find("player1-wins").GetComponent<SpriteRenderer>().enabled = true;
+                GameObject.Find("RestartLevel").GetComponent<Image>().enabled = true;
+            }
 
 
 

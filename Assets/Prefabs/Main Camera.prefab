@@ -12,7 +12,6 @@ GameObject:
   - 92: {fileID: 9297794}
   - 124: {fileID: 12497794}
   - 81: {fileID: 8197794}
-  - 114: {fileID: 11445014}
   - 114: {fileID: 11404850}
   - 82: {fileID: 8207464}
   m_Layer: 0
@@ -166,18 +165,6 @@ MonoBehaviour:
   - {fileID: 192462, guid: 93c968ce8edfd8049979583992f8abb4, type: 2}
   - {fileID: 176714, guid: df701dc355c8c1b498b9c55423ec69ce, type: 2}
   setMaps: 0
---- !u!114 &11445014
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e6010975d5859d4b808e003c2cf08a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalMaps: 0
 --- !u!124 &12497794
 Behaviour:
   m_ObjectHideFlags: 1

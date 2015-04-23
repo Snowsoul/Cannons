@@ -6,7 +6,7 @@ public class CountDOwn : MonoBehaviour {
     public GameObject player1Cannon;
     public GameObject player2Cannon;
     public GameObject keeper;
-    public GameObject camera;
+    public GameObject cm;
     public GameObject[] p1ui;
 
     public int countdown = 3;
@@ -50,7 +50,7 @@ public class CountDOwn : MonoBehaviour {
                 player1Cannon.GetComponent<MoveCannon>().frozen = false;
                 player2Cannon.GetComponent<MoveCannon>().frozen = false;
                 keeper.GetComponent<KeepTheTurns>().status = false;
-                camera.GetComponent<mapLoaderFromPlayerPrefs>().setMap();
+                cm.GetComponent<mapLoaderFromPlayerPrefs>().setMap();
                 foreach (GameObject g1 in p1ui)
                     g1.GetComponent<ShootSystem>().setActive();
             }

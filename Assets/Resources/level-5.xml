@@ -1,0 +1,34 @@
+<map>
+  <mapObjects>
+    <object>
+      <type>2</type>
+      <position>-1.93,0.14,-4.74</position>
+      <scale>0.6544806,0.6544801,0.6544801</scale>
+      <rotation>0,0,180</rotation>
+    </object>
+    <object>
+      <type>1</type>
+      <position>2.73,0.09,0</position>
+      <scale>0.2399614,0.2399614,0.2399617</scale>
+      <rotation>0,0,133.3081</rotation>
+    </object>
+    <object>
+      <type>1</type>
+      <position>-3.01,0.09,0</position>
+      <scale>0.2399614,0.2399614,0.2399617</scale>
+      <rotation>4.07111E-13,180,133.3081</rotation>
+    </object>
+    <object>
+      <type>0</type>
+      <position>-0.1,0.1,0</position>
+      <scale>0.1743718,0.1743717,0.1743717</scale>
+      <rotation>0,0,236.2904</rotation>
+    </object>
+    <object>
+      <type>2</type>
+      <position>1.38,0.11,-4.74</position>
+      <scale>0.6544806,0.6544801,0.6544801</scale>
+      <rotation>0,0,0</rotation>
+    </object>
+  </mapObjects>
+</map>

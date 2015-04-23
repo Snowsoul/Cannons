@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
-  destroyTime: 50
+  destroyTime: 20
   freeze: 0
   fire: 0
   simple: 1

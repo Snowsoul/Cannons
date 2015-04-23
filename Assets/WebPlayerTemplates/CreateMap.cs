@@ -11,7 +11,7 @@ public class CreateMap : MonoBehaviour {
 
 
 	void Start () {
-        string filePath = Application.dataPath + @"/maps/maps.xml";
+        string filePath = Application.dataPath + @"/Resources/maps.xml";
         XmlDocument xmlDoc = new XmlDocument();
 
         if (File.Exists(filePath))
@@ -25,7 +25,8 @@ public class CreateMap : MonoBehaviour {
 
 	}
 
-	void saveMap(){
+	void saveMap()
+    {
 
         Debug.Log("test");
 		int mapNumber = totalMaps;
@@ -39,8 +40,11 @@ public class CreateMap : MonoBehaviour {
 
        
 
-            string newPath = Application.dataPath + @"/maps/level-" + totalMaps + ".xml";
+            string newPath = Application.dataPath + @"/Resources/level-" + totalMaps + ".xml";
+            
+           
             File.WriteAllText(newPath,"<map></map>");
+           
             XmlDocument newLevel = new XmlDocument();
 
             if (File.Exists(newPath))
@@ -138,7 +142,7 @@ public class CreateMap : MonoBehaviour {
 
 			objectsNumber ++;
              */
-                string mapPath = Application.dataPath + @"/maps/maps.xml";
+                string mapPath = Application.dataPath + @"/Resources/maps.xml";
                 XmlDocument newMap = new XmlDocument();
 
 
@@ -167,11 +171,11 @@ public class CreateMap : MonoBehaviour {
 		}
 
 
-		/*PlayerPrefs.SetInt("map["+totalMaps+"].objects",objectsNumber);
-		PlayerPrefs.SetInt ("Maps", mapNumber);
-		PlayerPrefs.Save ();*/
+        /*PlayerPrefs.SetInt("map["+totalMaps+"].objects",objectsNumber);
+        PlayerPrefs.SetInt ("Maps", mapNumber);
+        PlayerPrefs.Save ();*/
 
-	}
+    }
 	
 
 	void Update () {
@@ -186,7 +190,7 @@ public class CreateMap : MonoBehaviour {
 			/*Debug.Log("All maps have been deleted");
 			PlayerPrefs.DeleteAll();
             */
-            string mapPath = Application.dataPath + @"/maps/maps.xml";
+            string mapPath = Application.dataPath + @"/Resources/maps.xml";
             XmlDocument newMap = new XmlDocument();
 
 
@@ -205,7 +209,7 @@ public class CreateMap : MonoBehaviour {
                         if (el.InnerText == "3")
                         {
                             elementRoot.RemoveChild(mapElement);
-                            File.Delete(Application.dataPath + @"/maps/level-3.xml");
+                            File.Delete(Application.dataPath + @"/Resources/level-3.xml");
                             Debug.Log("Map 3 deleted");
                         }
                         else

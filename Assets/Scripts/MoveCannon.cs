@@ -170,6 +170,7 @@ public class MoveCannon : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        Time.timeScale = 1.0f;
 		playerTag = transform.gameObject.tag;
 		freezeP1 = GameObject.Find ("fc-p1");
 		freezeP2 = GameObject.Find ("fc-p2");

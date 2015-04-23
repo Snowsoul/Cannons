@@ -1741,7 +1741,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainScene
+          m_StringArgument: normal
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2031263023}
@@ -2280,7 +2280,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2065229895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ce214a4895003479bd40ef68a0c808, type: 3}
+  m_Script: {fileID: 11500000, guid: 671e711c4de435a4b8c7734c04883a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2065229898
@@ -2324,6 +2324,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2031263023}
         m_MethodName: playMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2065229897}
+        m_MethodName: removeSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2633,7 +2645,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainScene
+          m_StringArgument: hardcore
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2031263023}
